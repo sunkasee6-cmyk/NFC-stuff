@@ -58,10 +58,17 @@ button {
 <script>
 function start() {
   const audio = document.getElementById("audio");
+
   audio.play();
 
   document.getElementById("screen1").style.display = "none";
   document.getElementById("screen2").style.display = "block";
+
+  bpmInterval = setInterval(() => {
+    if (!audio.paused && !audio.ended) {
+      navigator.vibrate([30, 40, 30]);
+    }
+  }, 600);
 }
 </script>
 
