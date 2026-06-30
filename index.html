@@ -3,39 +3,67 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Miguel phonk</title>
+<title>Miguel Phonk</title>
 
 <style>
-body{
-    margin:0;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    background:#111;
-    color:white;
-    font-family:Arial,sans-serif;
-    flex-direction:column;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: black;
+  color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-audio{
-    width:90%;
-    max-width:500px;
+#screen1, #screen2 {
+  text-align: center;
+  width: 100%;
 }
 
-h1{
-    margin-bottom:20px;
+#screen2 {
+  display: none;
+}
+
+button {
+  padding: 18px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
 }
 </style>
-
 </head>
 <body>
 
-<h1>😈☠️Miguel phonk☠️😈</h1>
+<!-- SCREEN 1 -->
+<div id="screen1">
+  <h1>Postoupení na Stránku</h1>
+  <p>Pro pokračování stiskni tlačítko níže</p>
 
-<audio controls>
-    <source src="Miguel phonk [extended high quality].mp3" type="audio/mpeg">
+  <button onclick="start()">▶ Pokračovat</button>
+</div>
+
+<!-- SCREEN 2 -->
+<div id="screen2">
+  <h1>😈☠️Miguel phonk☠️😈</h1>
+  <p>přehrávání spuštěno</p>
+</div>
+
+<audio id="audio">
+  <source src="Miguel phonk [extended high quality].mp3" type="audio/mpeg">
 </audio>
+
+<script>
+function start() {
+  const audio = document.getElementById("audio");
+  audio.play();
+
+  document.getElementById("screen1").style.display = "none";
+  document.getElementById("screen2").style.display = "block";
+}
+</script>
 
 </body>
 </html>
